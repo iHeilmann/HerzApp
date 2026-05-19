@@ -1,0 +1,48 @@
+#asciiStart {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    animation: asciiFadeOut 1.8s ease forwards;
+    animation-delay: 8.5s;
+}
+
+#asciiArt {
+    font-family: "Courier New", monospace;
+    font-size: 22px;
+    white-space: pre;
+    text-shadow: 0 0 8px #00ff66;
+    opacity: 1;
+    animation: asciiPulse 1.8s infinite ease-in-out;
+}
+
+.matrix-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999998;
+    font-family: monospace;
+    font-size: 18px;
+    color: #00ff66;
+    opacity: 0.25;
+}
+
+@keyframes asciiPulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+@keyframes asciiFadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; visibility: hidden; }
+}

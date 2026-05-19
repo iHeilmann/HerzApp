@@ -1,0 +1,93 @@
+body {
+    background: linear-gradient(180deg, #ffe6f0, #ffd6e8);
+    font-family: "Comic Sans MS", "Segoe UI", sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-top: 40px;
+    color: #d6336c;
+    font-size: 42px;
+    text-shadow: 0 0 10px #ff9bbd;
+}
+
+h2 {
+    margin-top: 40px;
+    color: #c2185b;
+    font-size: 32px;
+}
+
+#textBox {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #b3003c;
+    min-height: 60px;
+}
+
+#audioBanner {
+    background: rgba(255, 77, 109, 0.15);
+    border: 2px solid #ff4d6d;
+    color: #b3003c;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 12px;
+    animation: notePulse 1s infinite alternate;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 8px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 4px 10px rgba(255, 0, 80, 0.3);
+}
+
+button:hover:not(:disabled) {
+    transform: scale(1.1);
+    background: #ff1f4d;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#restartBtn {
+    display: none;
+    margin-top: 20px;
+    background: #6c63ff;
+    font-size: 20px;
+    padding: 13px 28px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.4);
+}
+
+#restartBtn:hover {
+    background: #5548e0;
+    transform: scale(1.08);
+}
+
+button.finish-btn {
+    margin-top: 35px;
+    background: #ff2e63;
+    font-size: 22px;
+    padding: 15px 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(255, 0, 80, 0.4);
+}
+
+button.finish-btn:hover {
+    background: #ff004c;
+    transform: scale(1.08);
+}

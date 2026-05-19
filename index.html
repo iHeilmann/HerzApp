@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#ff4d6d">
     <title>For you ❤️</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/matrix.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-<!-- MATRIX ASCII STARTSCREEN -->
 <div id="asciiStart">
     <pre id="asciiArt"></pre>
 </div>
@@ -41,74 +42,74 @@
 
 <div data-question="2">
 <p><b>2. Which song means the most to me?</b></p>
-<button onclick="quizAnswer(2, 'The Funeral', this)">"The Funeral" – Band of Horses 🎶</button>
-<button onclick="quizAnswer(2, 'Wonderwall', this)">"Wonderwall" – Oasis 🎸</button>
-<button onclick="quizAnswer(2, 'IndoSong', this)">A well-known Indonesian song 😄</button>
-<button onclick="quizAnswer(2, 'RapSong', this)">A German rap song I would NEVER listen to 😂</button>
+<button onclick="quizAnswer(2, 'The Funeral', this)">"The Funeral"</button>
+<button onclick="quizAnswer(2, 'Wonderwall', this)">"Wonderwall"</button>
+<button onclick="quizAnswer(2, 'IndoSong', this)">"Hati-Hati di Jalan"</button>
+<button onclick="quizAnswer(2, 'RapSong', this)">German rap song 😂</button>
 </div>
 
 <div data-question="3">
 <p><b>3. Which shows are among my favorites?</b></p>
-<button onclick="quizAnswer(3, 'How I Met Your Mother', this)">How I Met Your Mother 📺</button>
-<button onclick="quizAnswer(3, 'Game of Thrones', this)">Game of Thrones 🐉</button>
-<button onclick="quizAnswer(3, 'Haus des Geldes', this)">Money Heist 💰</button>
-<button onclick="quizAnswer(3, 'Riverdale', this)">Riverdale 😅</button>
+<button onclick="quizAnswer(3, 'How I Met Your Mother', this)">HIMYM</button>
+<button onclick="quizAnswer(3, 'Game of Thrones', this)">GoT</button>
+<button onclick="quizAnswer(3, 'Haus des Geldes', this)">Money Heist</button>
+<button onclick="quizAnswer(3, 'Riverdale', this)">Riverdale</button>
 </div>
 
 <div data-question="4">
 <p><b>4. What is my favorite movie?</b></p>
-<button onclick="quizAnswer(4, 'Titanic', this)">Titanic 🚢💙</button>
-<button onclick="quizAnswer(4, 'Titanic2', this)">Titanic… but only the first half 😄</button>
-<button onclick="quizAnswer(4, 'F&F', this)">Fast & Furious 27 😂</button>
-<button onclick="quizAnswer(4, 'Avatar', this)">Avatar 🌊</button>
+<button onclick="quizAnswer(4, 'Titanic', this)">Titanic</button>
+<button onclick="quizAnswer(4, 'Titanic2', this)">Titanic (first half 😄)</button>
+<button onclick="quizAnswer(4, 'F&F', this)">Fast & Furious</button>
+<button onclick="quizAnswer(4, 'Avatar', this)">Avatar</button>
 </div>
 
 <div data-question="5">
 <p><b>5. When is my birthday?</b></p>
-<button onclick="quizAnswer(5, '21.03.1996', this)">March 21st, 1996 🎂</button>
-<button onclick="quizAnswer(5, '21.03', this)">March 21st 😌</button>
-<button onclick="quizAnswer(5, 'Sommer', this)">Sometime in summer? 😅</button>
+<button onclick="quizAnswer(5, '21.03.1996', this)">21.03.1996</button>
+<button onclick="quizAnswer(5, '21.03', this)">21.03</button>
+<button onclick="quizAnswer(5, 'Sommer', this)">Summer?</button>
 <button onclick="quizAnswer(5, 'Keine Ahnung', this)">No idea 😳</button>
 </div>
 
 <div data-question="6">
 <p><b>6. What do I love most about you?</b></p>
-<button onclick="quizAnswer(6, 'Haare', this)">Your long black hair 🖤</button>
-<button onclick="quizAnswer(6, 'Alles', this)">Everything. Truly everything. ❤️</button>
-<button onclick="quizAnswer(6, 'Schuhe', this)">Your shoes 👟😂</button>
+<button onclick="quizAnswer(6, 'Haare', this)">Your hair</button>
+<button onclick="quizAnswer(6, 'Alles', this)">Everything ❤️</button>
+<button onclick="quizAnswer(6, 'Schuhe', this)">Your shoes 😂</button>
 <button onclick="quizAnswer(6, 'Nase', this)">Your nose 😄</button>
 </div>
 
 <div data-question="7">
 <p><b>7. What kind of humor do I like?</b></p>
-<button onclick="quizAnswer(7, 'Sarkasmus', this)">Sarcastic humor 😏</button>
-<button onclick="quizAnswer(7, 'Situationskomik', this)">Situational comedy 😄</button>
-<button onclick="quizAnswer(7, 'Schwarzer Humor', this)">Dark humor 😬</button>
-<button onclick="quizAnswer(7, 'Kein Humor', this)">I have no sense of humor 😐</button>
+<button onclick="quizAnswer(7, 'Sarkasmus', this)">Sarcastic</button>
+<button onclick="quizAnswer(7, 'Situationskomik', this)">Situational</button>
+<button onclick="quizAnswer(7, 'Schwarzer Humor', this)">Dark</button>
+<button onclick="quizAnswer(7, 'Kein Humor', this)">No humor 😐</button>
 </div>
 
 <div data-question="8">
 <p><b>8. What do I love doing most on days off?</b></p>
-<button onclick="quizAnswer(8, 'Chillen', this)">Chilling with you 💞</button>
-<button onclick="quizAnswer(8, 'Serien', this)">Watching series 📺</button>
-<button onclick="quizAnswer(8, 'Putzen', this)">Cleaning… never 😂</button>
-<button onclick="quizAnswer(8, 'Joggen', this)">Going for a run 🏃‍♂️</button>
+<button onclick="quizAnswer(8, 'Chillen', this)">Chilling with you</button>
+<button onclick="quizAnswer(8, 'Serien', this)">Watching series</button>
+<button onclick="quizAnswer(8, 'Putzen', this)">Cleaning 😂</button>
+<button onclick="quizAnswer(8, 'Joggen', this)">Running</button>
 </div>
 
 <div data-question="9">
 <p><b>9. What describes me best?</b></p>
-<button onclick="quizAnswer(9, 'Loyal', this)">Loyal 💙</button>
-<button onclick="quizAnswer(9, 'Romantisch', this)">Romantic ❤️</button>
-<button onclick="quizAnswer(9, 'Chaotisch', this)">Chaotic 😅</button>
-<button onclick="quizAnswer(9, 'Vergesslich', this)">Forgetful 😆</button>
+<button onclick="quizAnswer(9, 'Loyal', this)">Loyal</button>
+<button onclick="quizAnswer(9, 'Romantisch', this)">Romantic</button>
+<button onclick="quizAnswer(9, 'Chaotisch', this)">Chaotic</button>
+<button onclick="quizAnswer(9, 'Vergesslich', this)">Forgetful</button>
 </div>
 
 <div data-question="10">
 <p><b>10. What do I wish for most?</b></p>
-<button onclick="quizAnswer(10, 'Glück', this)">That you are happy 💖</button>
-<button onclick="quizAnswer(10, 'Zeit', this)">More time with you ⏳❤️</button>
-<button onclick="quizAnswer(10, 'Auto', this)">A new car 🚗😂</button>
-<button onclick="quizAnswer(10, 'Pizza', this)">Pizza. Always pizza. 🍕</button>
+<button onclick="quizAnswer(10, 'Glück', this)">Your happiness</button>
+<button onclick="quizAnswer(10, 'Zeit', this)">More time with you</button>
+<button onclick="quizAnswer(10, 'Auto', this)">A new car 😂</button>
+<button onclick="quizAnswer(10, 'Pizza', this)">Pizza</button>
 </div>
 
 </div>
@@ -125,6 +126,10 @@
     </div>
 </div>
 
-<script src="script.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/main.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/popup.js"></script>
+<script src="js/matrix.js"></script>
 </body>
 </html>
