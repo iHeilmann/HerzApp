@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #F5EDE0, #EDE0CF);
+    font-family: "Segoe UI", sans-serif;
+    color: #5A3010;
+    overflow-x: hidden;
+}
+
+.love-list-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.love-list-title {
+    font-size: 42px;
+    color: #6B3A1E;
+    text-shadow: 0 0 12px rgba(180, 120, 60, 0.6);
+    margin-bottom: 40px;
+}
+
+.love-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.love-list li {
+    background: rgba(250, 243, 232, 0.85);
+    margin: 18px 0;
+    padding: 18px 22px;
+    border-radius: 20px;
+    font-size: 20px;
+    box-shadow: 0 0 18px rgba(140, 80, 30, 0.25);
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.8s ease;
+}
+
+.love-list li.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.love-bg-heart {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(180,120,60,0.25), rgba(180,120,60,0));
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: bgPulse 6s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes bgPulse {
+    0%   { transform: translate(-50%, -50%) scale(1);    opacity: 0.35; }
+    50%  { transform: translate(-50%, -50%) scale(1.15); opacity: 0.55; }
+    100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.35; }
+}
