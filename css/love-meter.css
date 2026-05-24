@@ -18,72 +18,57 @@ body {
     font-size: 42px;
     color: #6B3A1E;
     text-shadow: 0 0 12px rgba(180, 120, 60, 0.6);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .lm-subtext {
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
     color: #7A4A20;
 }
 
+/* ── SVG-Herz ─────────────────────────────────── */
 .lm-heart-wrapper {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
-.lm-heart {
-    position: relative;
-    width: 200px;
-    height: 180px;
-    background: #C49A6C;
-    transform: rotate(-45deg);
-    border-radius: 50% 50% 0 0;
+.meter-svg {
+    width: 220px;
+    height: 210px;
     cursor: pointer;
-    box-shadow: 0 0 25px rgba(140, 80, 30, 0.4);
-    overflow: hidden;
-    transition: transform 0.2s ease;
+    filter: drop-shadow(0 4px 18px rgba(140, 80, 30, 0.35));
+    transition: transform 0.2s ease, filter 0.3s ease;
 }
 
-.lm-heart:hover {
-    transform: rotate(-45deg) scale(1.05);
+.meter-svg:hover {
+    filter: drop-shadow(0 6px 24px rgba(140, 80, 30, 0.5));
 }
 
-.lm-heart::before,
-.lm-heart::after {
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 180px;
-    background: #C49A6C;
-    border-radius: 50%;
+/* Puls beim Klick (per JS als Klasse gesetzt) */
+.meter-svg.pulse {
+    animation: meterPulse 0.35s ease-in-out;
 }
 
-.lm-heart::before { top: -90px; left: 0; }
-.lm-heart::after  { left: 90px; top: 0; }
-
-.lm-fill {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    background: linear-gradient(180deg, #8B5E3C, #C49A6C);
-    transform-origin: bottom;
-    transition: height 0.4s ease;
-    opacity: 0.9;
+@keyframes meterPulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
+/* ── Ergebnistext ─────────────────────────────── */
 .lm-result {
     font-size: 24px;
-    margin-top: 20px;
-    min-height: 40px;
+    font-weight: bold;
+    margin-top: 16px;
+    min-height: 36px;
+    color: #6B3A1E;
     opacity: 0;
     transition: opacity 0.6s ease;
-    color: #6B3A1E;
 }
 
+/* ── Hintergrund-Herz ─────────────────────────── */
 .lm-bg-heart {
     position: fixed;
     top: 50%;

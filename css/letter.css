@@ -14,25 +14,32 @@ body {
     text-align: center;
 }
 
+/* Titel bleibt immer sichtbar über dem Umschlag */
 .letter-title {
+    position: relative;
+    z-index: 10;
     font-size: 42px;
     color: #6B3A1E;
     text-shadow: 0 0 12px rgba(180, 120, 60, 0.6);
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 
 /* ── Öffnen-Button ────────────────────────────── */
 .letter-open-btn {
+    position: relative;
+    z-index: 10;
     background: #C49A6C;
     border: none;
-    padding: 16px 28px;
-    font-size: 22px;
+    padding: 14px 28px;
+    font-size: 20px;
     border-radius: 30px;
     cursor: pointer;
     color: #FAF3E8;
-    box-shadow: 0 0 18px rgba(140, 80, 30, 0.4);
-    transition: transform 0.2s ease, background 0.3s ease;
     font-family: inherit;
+    box-shadow: 0 0 18px rgba(140, 80, 30, 0.35);
+    transition: transform 0.2s ease, background 0.3s ease, opacity 0.3s ease;
+    display: inline-block;
+    margin-bottom: 32px;
 }
 
 .letter-open-btn:hover {
@@ -40,12 +47,18 @@ body {
     transform: scale(1.05);
 }
 
+.letter-open-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 /* ── Umschlag ─────────────────────────────────── */
 .envelope {
     position: relative;
+    z-index: 1;
     width: 320px;
     height: 220px;
-    margin: 50px auto 0;
+    margin: 60px auto 32px;
     cursor: pointer;
 }
 
@@ -55,7 +68,7 @@ body {
     height: 100%;
     background: #C49A6C;
     border-radius: 12px;
-    box-shadow: 0 0 18px rgba(140, 80, 30, 0.25);
+    box-shadow: 0 4px 18px rgba(140, 80, 30, 0.25);
 }
 
 .envelope-front {
@@ -65,6 +78,7 @@ body {
     background: #D4B080;
     border-radius: 12px;
     z-index: 3;
+    clip-path: polygon(0 45%, 100% 45%, 100% 100%, 0 100%);
 }
 
 .envelope-flap {
@@ -78,33 +92,29 @@ body {
     z-index: 4;
 }
 
-/* Klappe öffnet sich nach oben */
 .envelope.open .envelope-flap {
-    transform: rotateX(180deg);
+    transform: perspective(600px) rotateX(-180deg);
 }
 
-/* ── Brief-Inhalt (außerhalb des Umschlags) ───── */
+/* ── Brief-Inhalt ─────────────────────────────── */
 .letter-content {
     position: relative;
+    z-index: 10;
     width: 90%;
     max-width: 480px;
     margin: 0 auto;
     background: #FAF3E8;
     color: #5A3010;
-    border-radius: 12px;
+    border-radius: 14px;
     border-left: 4px solid #8B5E3C;
     padding: 28px 32px;
     box-shadow: 0 6px 24px rgba(140, 80, 30, 0.2);
     text-align: left;
 
-    /* Versteckt bis .show */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-16px);
-    transition:
-        opacity    0.7s ease,
-        transform  0.7s ease,
-        visibility 0.7s;
+    transform: translateY(-12px);
+    transition: opacity 0.7s ease, transform 0.7s ease, visibility 0.7s;
 }
 
 .letter-content.show {
@@ -125,9 +135,7 @@ body {
     margin: 0 0 12px 0;
 }
 
-.letter-content p:last-child {
-    margin-bottom: 0;
-}
+.letter-content p:last-child { margin-bottom: 0; }
 
 /* ── Hintergrund-Herz ─────────────────────────── */
 .letter-bg-heart {
