@@ -1,0 +1,70 @@
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    #quiz {
+        width: 95%;
+        padding: 12px;
+    }
+
+    #quiz p {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 10px 14px;
+        margin: 5px;
+    }
+
+    button.finish-btn {
+        font-size: 18px;
+        padding: 12px 22px;
+    }
+
+    #restartBtn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    #quizResult {
+        font-size: 20px;
+    }
+
+    #audioBanner {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    #asciiArt {
+        font-size: 13px;
+    }
+
+    .popup-content {
+        max-width: 98%;
+    }
+
+    #popupVideo {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 380px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    #asciiArt {
+        font-size: 10px;
+    }
+
+    button {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+}

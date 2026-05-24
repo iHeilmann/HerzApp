@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #F5EDE0, #EDE0CF);
+    font-family: "Segoe UI", sans-serif;
+    color: #5A3010;
+    overflow-x: hidden;
+}
+
+.heart-page-container {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.heart-page-title {
+    font-size: 42px;
+    color: #6B3A1E;
+    text-shadow: 0 0 12px rgba(180, 120, 60, 0.6);
+    margin-bottom: 30px;
+}
+
+.heart-page-text {
+    font-size: 20px;
+    line-height: 1.6;
+    background: rgba(250, 243, 232, 0.85);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 18px rgba(140, 80, 30, 0.25);
+}
+
+.bg-heart {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(180,120,60,0.22), rgba(180,120,60,0));
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: softPulse 6s ease-in-out infinite;
+    z-index: -1;
+    opacity: 0.45;
+}
+
+@keyframes softPulse {
+    0%   { transform: translate(-50%, -50%) scale(1);    opacity: 0.35; }
+    50%  { transform: translate(-50%, -50%) scale(1.18); opacity: 0.55; }
+    100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.35; }
+}
