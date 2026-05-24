@@ -21,6 +21,7 @@ body {
     margin-bottom: 30px;
 }
 
+/* ── Öffnen-Button ────────────────────────────── */
 .letter-open-btn {
     background: #C49A6C;
     border: none;
@@ -31,6 +32,7 @@ body {
     color: #FAF3E8;
     box-shadow: 0 0 18px rgba(140, 80, 30, 0.4);
     transition: transform 0.2s ease, background 0.3s ease;
+    font-family: inherit;
 }
 
 .letter-open-btn:hover {
@@ -38,13 +40,13 @@ body {
     transform: scale(1.05);
 }
 
+/* ── Umschlag ─────────────────────────────────── */
 .envelope {
     position: relative;
     width: 320px;
     height: 220px;
-    margin: 60px auto;
+    margin: 50px auto 0;
     cursor: pointer;
-    transform-style: preserve-3d;
 }
 
 .envelope-back {
@@ -71,37 +73,63 @@ body {
     height: 100%;
     background: #A07840;
     clip-path: polygon(0 0, 100% 0, 50% 55%);
-    transform-origin: top;
-    transition: transform 0.8s ease;
+    transform-origin: top center;
+    transition: transform 0.7s ease;
     z-index: 4;
 }
 
+/* Klappe öffnet sich nach oben */
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+/* ── Brief-Inhalt (außerhalb des Umschlags) ───── */
 .letter-content {
-    position: absolute;
+    position: relative;
     width: 90%;
-    height: 90%;
+    max-width: 480px;
+    margin: 0 auto;
     background: #FAF3E8;
-    top: 5%;
-    left: 5%;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 0 18px rgba(140, 80, 30, 0.25);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease;
-    z-index: 1;
     color: #5A3010;
+    border-radius: 12px;
+    border-left: 4px solid #8B5E3C;
+    padding: 28px 32px;
+    box-shadow: 0 6px 24px rgba(140, 80, 30, 0.2);
+    text-align: left;
+
+    /* Versteckt bis .show */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-16px);
+    transition:
+        opacity    0.7s ease,
+        transform  0.7s ease,
+        visibility 0.7s;
 }
 
 .letter-content.show {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
 }
 
-.envelope.open .envelope-flap {
-    transform: rotateX(160deg);
+.letter-content h2 {
+    color: #6B3A1E;
+    margin: 0 0 16px 0;
+    font-size: 22px;
 }
 
+.letter-content p {
+    font-size: 17px;
+    line-height: 1.75;
+    margin: 0 0 12px 0;
+}
+
+.letter-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Hintergrund-Herz ─────────────────────────── */
 .letter-bg-heart {
     position: fixed;
     top: 50%;
