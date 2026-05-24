@@ -32,11 +32,54 @@
     <main class="lm-container">
         <h1 class="lm-title">Love Meter</h1>
         <p class="lm-subtext">Click on the heart and fill it with love 💗</p>
+
         <div class="lm-heart-wrapper">
-            <div class="lm-heart" id="loveHeart">
-                <div class="lm-fill" id="loveFill"></div>
-            </div>
+            <!-- SVG-Herz mit Füll-Animation -->
+            <svg id="meterSvg" class="meter-svg" viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <clipPath id="heartClip">
+                        <path d="M100,175 C60,145 10,110 10,65
+                                 C10,35 30,15 55,15
+                                 C72,15 88,25 100,40
+                                 C112,25 128,15 145,15
+                                 C170,15 190,35 190,65
+                                 C190,110 140,145 100,175 Z"/>
+                    </clipPath>
+                    <linearGradient id="heartGrad" x1="0" y1="1" x2="0" y2="0">
+                        <stop offset="0%"   stop-color="#8B5E3C"/>
+                        <stop offset="100%" stop-color="#C49A6C"/>
+                    </linearGradient>
+                </defs>
+
+                <!-- Herz-Umriss (leer) -->
+                <path d="M100,175 C60,145 10,110 10,65
+                         C10,35 30,15 55,15
+                         C72,15 88,25 100,40
+                         C112,25 128,15 145,15
+                         C170,15 190,35 190,65
+                         C190,110 140,145 100,175 Z"
+                      fill="rgba(196,154,108,0.2)"
+                      stroke="#C49A6C"
+                      stroke-width="3"/>
+
+                <!-- Füll-Rechteck, auf Herzform zugeschnitten -->
+                <rect id="heartFillRect"
+                      x="0" y="190"
+                      width="200" height="190"
+                      fill="url(#heartGrad)"
+                      clip-path="url(#heartClip)"/>
+
+                <!-- Prozent-Text -->
+                <text id="meterPercent"
+                      x="100" y="103"
+                      text-anchor="middle"
+                      fill="#6B3A1E"
+                      font-size="26"
+                      font-weight="bold"
+                      font-family="Segoe UI, sans-serif">0%</text>
+            </svg>
         </div>
+
         <p class="lm-result" id="loveResult"></p>
     </main>
 

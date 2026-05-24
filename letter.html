@@ -31,16 +31,18 @@
 
     <main class="letter-container">
         <h1 class="letter-title">A letter for you</h1>
-        <button class="letter-open-btn" id="openLetterBtn">Open my letter 💌</button>
 
-        <!-- Umschlag (nur die Hülle, KEIN Inhalt mehr darin) -->
+        <!-- Umschlag zuerst -->
         <div class="envelope" id="envelope">
             <div class="envelope-back"></div>
             <div class="envelope-front"></div>
             <div class="envelope-flap"></div>
         </div>
 
-        <!-- Brief-Inhalt außerhalb des Umschlags, erscheint darunter -->
+        <!-- Button UNTER dem Umschlag, verschwindet nach dem Öffnen -->
+        <button class="letter-open-btn" id="openLetterBtn">Open my letter 💌</button>
+
+        <!-- Brief-Inhalt erscheint unterhalb -->
         <div class="letter-content" id="letterContent">
             <h2>For you ❤️</h2>
             <p>This is a small placeholder letter, but the real words I want to say to you are even more beautiful.</p>
