@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #F5EDE0, #EDE0CF);
+    font-family: "Segoe UI", sans-serif;
+    color: #5A3010;
+    overflow-x: hidden;
+}
+
+.lm-container {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.lm-title {
+    font-size: 42px;
+    color: #6B3A1E;
+    text-shadow: 0 0 12px rgba(180, 120, 60, 0.6);
+    margin-bottom: 16px;
+}
+
+.lm-subtext {
+    font-size: 20px;
+    margin-bottom: 36px;
+    color: #7A4A20;
+}
+
+/* ── SVG-Herz ─────────────────────────────────── */
+.lm-heart-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.meter-svg {
+    width: 220px;
+    height: 210px;
+    cursor: pointer;
+    filter: drop-shadow(0 4px 18px rgba(140, 80, 30, 0.35));
+    transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.meter-svg:hover {
+    filter: drop-shadow(0 6px 24px rgba(140, 80, 30, 0.5));
+}
+
+/* Puls beim Klick (per JS als Klasse gesetzt) */
+.meter-svg.pulse {
+    animation: meterPulse 0.35s ease-in-out;
+}
+
+@keyframes meterPulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* ── Ergebnistext ─────────────────────────────── */
+.lm-result {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 16px;
+    min-height: 36px;
+    color: #6B3A1E;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+/* ── Hintergrund-Herz ─────────────────────────── */
+.lm-bg-heart {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(180,120,60,0.25), rgba(180,120,60,0));
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: bgPulse 6s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes bgPulse {
+    0%   { transform: translate(-50%, -50%) scale(1);    opacity: 0.35; }
+    50%  { transform: translate(-50%, -50%) scale(1.15); opacity: 0.55; }
+    100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.35; }
+}

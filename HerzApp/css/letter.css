@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #F5EDE0, #EDE0CF);
+    font-family: "Segoe UI", sans-serif;
+    color: #5A3010;
+    overflow-x: hidden;
+}
+
+.letter-container {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Titel bleibt immer sichtbar über dem Umschlag */
+.letter-title {
+    position: relative;
+    z-index: 10;
+    font-size: 42px;
+    color: #6B3A1E;
+    text-shadow: 0 0 12px rgba(180, 120, 60, 0.6);
+    margin-bottom: 32px;
+}
+
+/* ── Öffnen-Button ────────────────────────────── */
+.letter-open-btn {
+    position: relative;
+    z-index: 10;
+    background: #C49A6C;
+    border: none;
+    padding: 14px 28px;
+    font-size: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #FAF3E8;
+    font-family: inherit;
+    box-shadow: 0 0 18px rgba(140, 80, 30, 0.35);
+    transition: transform 0.2s ease, background 0.3s ease, opacity 0.3s ease;
+    display: inline-block;
+    margin-bottom: 32px;
+}
+
+.letter-open-btn:hover {
+    background: #A07840;
+    transform: scale(1.05);
+}
+
+.letter-open-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ── Umschlag ─────────────────────────────────── */
+.envelope {
+    position: relative;
+    z-index: 1;
+    width: 320px;
+    height: 220px;
+    margin: 60px auto 32px;
+    cursor: pointer;
+}
+
+.envelope-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #C49A6C;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(140, 80, 30, 0.25);
+}
+
+.envelope-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #D4B080;
+    border-radius: 12px;
+    z-index: 3;
+    clip-path: polygon(0 45%, 100% 45%, 100% 100%, 0 100%);
+}
+
+.envelope-flap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #A07840;
+    clip-path: polygon(0 0, 100% 0, 50% 55%);
+    transform-origin: top center;
+    transition: transform 0.7s ease;
+    z-index: 4;
+}
+
+.envelope.open .envelope-flap {
+    transform: perspective(600px) rotateX(-180deg);
+}
+
+/* ── Brief-Inhalt ─────────────────────────────── */
+.letter-content {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 480px;
+    margin: 0 auto;
+    background: #FAF3E8;
+    color: #5A3010;
+    border-radius: 14px;
+    border-left: 4px solid #8B5E3C;
+    padding: 28px 32px;
+    box-shadow: 0 6px 24px rgba(140, 80, 30, 0.2);
+    text-align: left;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+    transition: opacity 0.7s ease, transform 0.7s ease, visibility 0.7s;
+}
+
+.letter-content.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.letter-content h2 {
+    color: #6B3A1E;
+    margin: 0 0 16px 0;
+    font-size: 22px;
+}
+
+.letter-content p {
+    font-size: 17px;
+    line-height: 1.75;
+    margin: 0 0 12px 0;
+}
+
+.letter-content p:last-child { margin-bottom: 0; }
+
+/* ── Hintergrund-Herz ─────────────────────────── */
+.letter-bg-heart {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(180,120,60,0.25), rgba(180,120,60,0));
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: bgPulse 6s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes bgPulse {
+    0%   { transform: translate(-50%, -50%) scale(1);    opacity: 0.35; }
+    50%  { transform: translate(-50%, -50%) scale(1.15); opacity: 0.55; }
+    100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.35; }
+}
